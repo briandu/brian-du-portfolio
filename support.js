@@ -52,11 +52,12 @@
     };
 
     frames.forEach((img) => {
-      img.style.opacity = "0";
+      const isDefault = img.hasAttribute("data-frame-default");
+      if (!isDefault) img.style.opacity = "0";
       img.addEventListener("load", () => {
         loaded += 1;
         maybeShowFallback();
-        if (loaded === 1) img.style.opacity = "1";
+        if (isDefault) img.style.opacity = "1";
       });
       img.addEventListener("error", () => {
         failed += 1;
@@ -66,7 +67,7 @@
       if (img.complete) {
         if (img.naturalWidth > 0) {
           loaded += 1;
-          if (loaded === 1) img.style.opacity = "1";
+          if (isDefault) img.style.opacity = "1";
         } else {
           failed += 1;
           img.style.display = "none";
