@@ -1,0 +1,28 @@
+---
+description: HTML, CSS, and JS conventions for this static portfolio
+globs: ["**/*.html", "**/*.js", "**/*.css", "**/*.mjs"]
+alwaysApply: false
+---
+
+# Code Style
+
+This site is static HTML pages plus a small shared runtime. Do not introduce a bundler, framework, or CSS-in-JS layer unless asked.
+
+## Formatting
+
+- 2-space indent. Exactly ONE empty line between logical blocks; never 2+ consecutive empty lines.
+- Every file ends with exactly 1 trailing newline.
+- Do not add or remove empty lines unrelated to your change — keep diffs clean.
+- `const` over `let`; never `var`. Prefer optional chaining (`?.`) and nullish coalescing (`??`) where they aid readability.
+
+## Pages
+
+- Keep the existing Claude Design pattern: inline `style` attributes, `data-mq` / `data-mq-style` for breakpoints, `data-reveal` / `data-parallax` for motion.
+- Shared behavior lives in `support.js` (and `image-slot.js` where used). Do not copy `support.js` into each page.
+- Preserve brand type: **Montserrat** for display, **Inter** for body. Do not swap fonts casually.
+- Match existing color tokens (`#242426`, `#6F6CAE`, `#8885C3`, `#FAFAF8`, `#E4E4E1`) rather than introducing one-off hexes.
+
+## Assets
+
+- Page-local images go in `assets/`. Brand marks live in `brand-assets/`. Hero turntable frames live in `frames/` as WebP.
+- Prefer existing SVG marks over rasterizing the logo.

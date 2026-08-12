@@ -1,0 +1,57 @@
+---
+description: Commit conventions - Conventional Commits, logical grouping, secret scanning, debug cleanup. Use when committing changes or when the user asks to "commit" or "smart commit".
+alwaysApply: false
+---
+
+# Commits
+
+## Format
+
+All commits follow Conventional Commits:
+
+```
+<type>(<scope>): <description>
+```
+
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `chore`, `ci`
+- **Scopes for this repo**: `hero`, `work`, `amplify`, `seedwell`, `resume`, `brand`, `frames`, `assets`, `deploy`, `rules`
+- Prefer a **single-line** subject when the change is self-explanatory. Add a body only for factual bullets or decisions reviewers need.
+- Body bullets MUST be consecutive with NO blank lines between them.
+- NEVER use multiple `-m` flags (git inserts blank lines between them). Use a single `-m` with a heredoc:
+
+```bash
+git commit -m "$(cat <<'EOF'
+feat(hero): swap logo fallback for cursor turntable
+
+- Add 19 transparent WebP frames under frames/
+- Hide the BD mark once portraits load
+EOF
+)"
+```
+
+## Grouping and order
+
+- One commit per logical change group; stage only the relevant files.
+- Respect dependencies: files that are imported must be committed before files that use them.
+- Order: shared runtime/assets first, then page HTML, then docs/rules.
+- Document crucial design or architectural decisions in the commit body (the "why").
+
+## Before committing
+
+1. Remove temporary debug code: `console.log` used for debugging, `debugger`, commented-out experiments.
+2. Scan staged files for secrets — NEVER commit:
+   - `.env` file contents pasted into code
+   - JWTs (`eyJ...`), API keys (`sk-...`, `ghp_`, `AKIA`, `sk_live_`, Vercel tokens)
+   - If found: move to `.env` and confirm `.env` is gitignored.
+3. Verify `.gitignore` covers `.env`, `node_modules/`, `.vercel`.
+4. No unnecessary whitespace changes; files end with exactly 1 trailing newline.
+
+## After each commit
+
+- Check `git log -1 --format=%B` for a `Made-with: Cursor` trailer added by hooks; if present, amend to remove it.
+
+## Guardrails
+
+- Commit locally only. Do not push unless explicitly requested.
+- No attribution trailers or tooling ads in commit messages.
+- If in doubt whether something is sensitive, ask before committing.

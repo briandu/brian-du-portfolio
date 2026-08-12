@@ -1,0 +1,33 @@
+---
+description: Claude Design handoff conventions for this static portfolio site
+globs:
+  - "**/*.html"
+  - "support.js"
+  - "scripts/**"
+  - "brand-assets/**"
+  - "frames/**"
+alwaysApply: false
+---
+
+# Claude Design handoffs
+
+This repo **is** the implemented site (static HTML), not a translation into Next.js. Keep `support.js` and the `data-*` runtime.
+
+## Source of truth
+
+- Visual system: `brand.html` plus the live pages (`index.html`, `amplify.html`, `seedwell.html`, `resume.html`).
+- Identity: BD monogram (B inside D), Soft Technical palette, Montserrat + Inter.
+- Hero portraits: `frames/figure-28.webp`…`36` then `figure-01.webp`…`10` (transparent WebP). The BD mark is fallback only.
+
+## When the user drops a zip / asks to re-import
+
+1. Unzip into the handoff dir, then run `npm run import:handoff` (`scripts/import-handoff.mjs`).
+2. Re-apply local overlays that the importer does not own (hero frames, case-study screenshots, copy edits made after import).
+3. Do not strip `support.js`, `data-dc-root`, or `data-mq` to "clean up" the markup.
+4. Tighten spacing only after structure and interaction from the mock are wired.
+
+## Stack boundaries
+
+- Stay static: `npx serve` locally, Vercel for deploy (`vercel.json` clean URLs).
+- Do not migrate to React/Next unless explicitly asked.
+- Case-study screenshots that are still placeholders use `image-slot.js` fallbacks — replace the slot, don't invent a new image system.
