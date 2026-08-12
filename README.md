@@ -42,5 +42,9 @@ These were referenced in the design but not included in the zip. Until they are 
 
 ## Deploy
 
-- **GitHub**: push this repo
-- **Vercel**: import the GitHub repo (static / Other framework). `vercel.json` enables clean URLs.
+- **GitHub**: https://github.com/briandu/brian-du-portfolio
+- **Production**: https://brian-du-portfolio.vercel.app
+- **Vercel project**: already configured (`vercel.json` enables clean URLs)
+
+To auto-deploy on every push, connect the GitHub repo in  
+[Vercel → Project → Settings → Git](https://vercel.com/brian-dus-projects/brian-du-portfolio/settings/git).
