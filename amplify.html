@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amplify — Brian Du</title>
+<meta name="description" content="Brian Du — product design, UX, design systems, and front-end engineering.">
+<link rel="icon" href="./brand-assets/bd-favicon-32.svg" type="image/svg+xml">
+<script src="./support.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: #EDEDEB; font-family: 'Inter', system-ui, sans-serif; color: #242426; -webkit-font-smoothing: antialiased; }
+  a { color: #6F6CAE; text-decoration: none; }
+  a:hover { color: #242426; }
+  ::selection { background: #DAD7EE; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+<script src="./image-slot.js"></script>
+</head>
+<body>
+<div data-dc-root>
+<div data-mq="620" data-mq-style="padding: 9px; gap: 9px" style="width: 100%; overflow-x: hidden; padding: 14px; display: flex; flex-direction: column; gap: 14px;">
+
+  <section data-screen-label="Overview" style="position: relative; border-radius: 22px; overflow: hidden; background: radial-gradient(58% 62% at 92% 4%, rgba(212,178,140,0.30) 0%, rgba(212,178,140,0) 64%), radial-gradient(46% 52% at 6% 96%, rgba(136,133,195,0.24) 0%, rgba(136,133,195,0) 62%), #FAFAF8; padding: clamp(14px, 1.4vw, 18px) clamp(14px, 1.4vw, 18px) clamp(48px, 6vw, 96px);">
+
+    <div data-mq="620" data-mq-style="padding: 7px 7px 7px 11px" style="position: relative; z-index: 4; display: flex; justify-content: space-between; align-items: center; background: #FAFAF8; border: 1px solid #E4E4E0; border-radius: 999px; padding: 9px 9px 9px 15px;">
+      <div data-mq="620" data-mq-style="gap: 8px" style="display: flex; align-items: center; gap: 11px;">
+        <svg viewBox="0 0 140 140" width="25" height="25" aria-hidden="true"><path d="M30 22H70a48 48 0 0 1 0 96H30Z" fill="#242426"></path><path d="M45 36h25a34 34 0 0 1 0 68H45Z" fill="#8885C3"></path><path d="M45 24h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#242426"></path><path d="M45 65h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#242426"></path><path d="M45 37h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#FAFAF8"></path><path d="M45 78h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#FAFAF8"></path></svg>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.01em;">Brian Du</div>
+      </div>
+      <nav data-mq="620" data-mq-style="gap: 9px; font-size: 9.5px; letter-spacing: 0.1em" style="display: flex; align-items: center; gap: 18px; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;">
+        <a href="./index.html#work" style="color: #68686F;">All work</a>
+        <span style="color: #CFCFC9;">/</span>
+        <a href="./resume.html" style="color: #68686F;">Résumé</a>
+        <a href="#contact" data-mq="620" data-mq-style="padding: 7px 12px" style="border: 1px solid #242426; border-radius: 999px; padding: 8px 15px; color: #242426;">Contact</a>
+      </nav>
+    </div>
+
+    <div data-mq="900" data-mq-style="grid-template-columns: 1fr; gap: 30px" style="position: relative; display: grid; grid-template-columns: 1.35fr 1fr; gap: 60px; align-items: end; padding: clamp(44px, 6vw, 96px) clamp(14px, 4vw, 74px) 0;">
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <div data-reveal="" style="display: flex; align-items: baseline; gap: 14px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">
+          <span>Case study 01</span>
+          <span style="color: #C6C4D2;">—</span>
+          <span style="color: #68686F;">2025 — 2026</span>
+        </div>
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(13px, 1.5vw, 19px); font-weight: 600; letter-spacing: 0.02em; color: #55555A;">Global Health Solutions</div>
+          <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(46px, 8vw, 122px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.9;">Amplify</h1>
+        </div>
+        <p data-reveal="" style="margin: 0; max-width: 620px; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.58; color: #3C3C42; text-wrap: pretty;">A product initiative developed inside Global Health Solutions. The work ran from a refresh of the parent brand and its marketing website through the product's own identity, its member and employer interfaces, and into early React Native implementation.</p>
+      </div>
+      <div data-reveal="" data-mq="620" data-mq-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px 30px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Role</div>
+          <div style="font-size: 13.5px; line-height: 1.5;">Brand, product design &amp; front-end</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Organization</div>
+          <div style="font-size: 13.5px; line-height: 1.5;">Global Health Solutions</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Platform</div>
+          <div style="font-size: 13.5px; line-height: 1.5;">React Native, responsive web</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Scope</div>
+          <div style="font-size: 13.5px; line-height: 1.5;">Brand, product system, initial build</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Lead visual" style="border-radius: 22px; background: #EFE6DA; padding: clamp(34px, 5vw, 78px) clamp(20px, 4vw, 74px);">
+    <div data-mq="820" data-mq-style="grid-template-columns: 1fr; gap: 34px" style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: center; max-width: 1240px; margin: 0 auto;">
+      <div data-reveal="" data-mq="820" data-mq-style="margin: 0 auto" style="width: 300px; max-width: 100%; aspect-ratio: 9 / 19; border-radius: 40px; border: 9px solid #242426; background: #EFEEF8; overflow: hidden; color: #55555A; box-shadow: 0 30px 70px rgba(36,36,38,0.22); position: relative;">
+        <img src="./assets/amplify-case-phone-home.png" alt="Amplify employee app — points, weekly streak and today's action plan" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%;">
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8;">
+          <div style="display: flex; align-items: center; gap: 7px; padding: 11px 14px; border-bottom: 1px solid #EDE6DA;">
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #DCD3C6;"></span>
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #DCD3C6;"></span>
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #DCD3C6;"></span>
+          </div>
+          <div style="aspect-ratio: 16 / 10; position: relative;">
+            <img src="./assets/amplify-employer-dashboard.png" alt="Amplify employer dashboard — stress score, participation and engagement trends" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+          </div>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.55; color: #7A6E5E;">Two audiences, one system: the employee app carries the daily experience, the employer console carries participation and program data.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Problem" style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(36px, 4vw, 58px);">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">The problem</div>
+      <h2 style="margin: 0; max-width: 900px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">A service business with no product to stand on</h2>
+    </div>
+    <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 30px" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 18px; max-width: 660px;">
+        <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">Global Health Solutions delivered biometric screening and onsite wellness services to employers. The results landed as reports, and the relationship with the employee ended there — nothing carried the insight forward into behaviour, and nothing gave the employer a picture of what their program was doing.</p>
+        <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">The original concept was a basic wellness offering. Our work was to evolve it into a personalized, intelligent employee health experience: something worth opening more than once a year, with benefits, services and rewards attached to it.</p>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid #E4E4E0;">
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 15px 0; border-bottom: 1px solid #E4E4E0;">
+          <div style="font-size: 13px; color: #68686F;">Employee surface</div>
+          <div style="font-size: 13px; text-align: right;">Mobile, personal</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 15px 0; border-bottom: 1px solid #E4E4E0;">
+          <div style="font-size: 13px; color: #68686F;">Employer surface</div>
+          <div style="font-size: 13px; text-align: right;">Web, aggregate</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 15px 0; border-bottom: 1px solid #E4E4E0;">
+          <div style="font-size: 13px; color: #68686F;">Existing inputs</div>
+          <div style="font-size: 13px; text-align: right;">Biometric screening, onsite services</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 15px 0;">
+          <div style="font-size: 13px; color: #68686F;">Starting point</div>
+          <div style="font-size: 13px; text-align: right;">Concept only, no product</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Parent brand" style="border-radius: 22px; background: #EFE6DA; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(36px, 4.4vw, 58px);">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6E4A;">The parent brand</div>
+      <h2 style="margin: 0; max-width: 900px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">The work started at the company, not the product</h2>
+    </div>
+    <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 30px" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start;">
+      <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #4A4034; text-wrap: pretty;">Before the product experience expanded, I helped evolve how Global Health Solutions presented itself — refreshing the brand and rebuilding the marketing website so the company had a clearer, more cohesive foundation for the work it was already doing.</p>
+      <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #4A4034; text-wrap: pretty;">That foundation mattered later: when Amplify needed its own identity, it had something credible to sit next to rather than start from.</p>
+    </div>
+    <div data-mq="900" data-mq-style="grid-template-columns: 1fr; gap: 28px" style="display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 40px; align-items: end;">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8;">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 11px 14px; border-bottom: 1px solid #E4DED2;">
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #DCD3C6;"></span>
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #DCD3C6;"></span>
+            <span style="width: 9px; height: 9px; border-radius: 50%; background: #DCD3C6;"></span>
+          </div>
+          <div style="aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: #FFFFFF;">
+            <img src="./assets/ghs-website-desktop-v2.png" alt="Global Health Solutions marketing website, desktop" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+          </div>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">The rebuilt marketing website.</div>
+      </div>
+      <div data-reveal="" data-mq="900" data-mq-style="margin: 0 auto" style="display: flex; flex-direction: column; gap: 12px; width: 240px; max-width: 100%;">
+        <div style="aspect-ratio: 9 / 19; border-radius: 26px; border: 7px solid #242426; background: #EFEEF8; overflow: hidden; position: relative;">
+          <img src="./assets/ghs-website-mobile.png" alt="Global Health Solutions marketing website at phone width" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">The same site at phone width.</div>
+      </div>
+    </div>
+    <div data-mq="820" data-mq-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 4 / 3; position: relative;">
+          <img src="./assets/ghs-brand-logos.png" alt="Global Health Solutions mark and horizontal and stacked lockups" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">Mark and lockups</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 4 / 3; position: relative;">
+          <img src="./assets/ghs-brand-colors-v2.png" alt="Global Health Solutions palette: 63C8C4, 0C608E and 5AB1E1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">The palette</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 4 / 3; position: relative;">
+          <img src="./assets/ghs-brand-logo-explore.png" alt="Three mark directions explored for Global Health Solutions" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">Directions explored along the way</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="GHS to Amplify" style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(36px, 4.4vw, 58px);">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">How the two connect</div>
+      <h2 style="margin: 0; max-width: 900px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">Amplify emerged inside Global Health Solutions</h2>
+    </div>
+    <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 34px" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 0;">
+        <div style="border: 1px solid #E4E4E0; border-radius: 16px; background: #FFFFFF; padding: clamp(22px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 7px;">
+          <img src="./assets/logo-ghs.svg" alt="Global Health Solutions logo" style="display: block; align-self: flex-start; height: 28px; width: auto; margin-bottom: 4px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2.4vw, 28px); font-weight: 600; letter-spacing: -0.02em;">Global Health Solutions</div>
+          <div style="font-size: 13px; line-height: 1.55; color: #68686F;">Parent company — brand and marketing foundation</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 14px 0;">
+          <div style="width: 1px; height: 22px; background: #D2D0DE;"></div>
+          <div style="font-size: 15px; line-height: 1; color: #8885C3;">↓</div>
+        </div>
+        <div style="border: 1px solid #C9C6E2; border-radius: 16px; background: #F2F1FA; padding: clamp(22px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 7px;">
+          
+          <img src="./logo-amplify-2-mskpu0eq-rn4n.svg" alt="logo-amplify-2" width="125" height="30" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 125px; aspect-ratio: 125 / 30"><div style="font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2.4vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: #37356B;">Amplify</div>
+          <div style="font-size: 13px; line-height: 1.55; color: #5B5980;">Product initiative — brand and digital product experience</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">The concept began as a fairly conventional employee wellness offering. As it evolved toward a personalized, AI-assisted health and benefits experience, it outgrew what the parent brand alone could carry.</p>
+        <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">Amplify needed to read as its own product without cutting itself off from the credibility of the company behind it. That constraint shaped both the identity and the interface work that followed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Amplify identity" style="border-radius: 22px; background: #EFE6DA; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(36px, 4.4vw, 58px);">
+    <div data-reveal="" style="display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6E4A;">Product identity</div>
+        <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1;">Its own voice, borrowed credibility</h2>
+      </div>
+      <p style="margin: 0; max-width: 340px; font-size: 13.5px; line-height: 1.62; color: #7A6E5E; text-wrap: pretty;">I established the product's visual identity and applied it across presentation material and the digital experience.</p>
+    </div>
+    <div data-mq="900" data-mq-style="grid-template-columns: 1fr 1fr" data-mq2="620" data-mq2-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 1; position: relative;">
+          <img src="./assets/amp-brand-logo.png" alt="Amplify logo in dark green on white and reversed on green" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">Logo</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 1; position: relative;">
+          <img src="./assets/amp-brand-colors.png" alt="Amplify palette: 115D5A, B4D193 and FFE3FA" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">Colour</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 1; position: relative;">
+          <img src="./assets/amp-brand-presentation.png" alt="Amplify investor and program presentation pages" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">Presentation material</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D9CFC0; background: #FAFAF8; aspect-ratio: 1; position: relative;">
+          <img src="./assets/amp-brand-marketing.png" alt="Amplify marketing graphics: waitlist page, rewards program poster and brand card" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #FFFFFF;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #7A6E5E;">Marketing graphics</div>
+      </div>
+    </div>
+  </section>
+
+  
+    <section data-screen-label="Approach" style="border-radius: 22px; background: #17171A; color: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(40px, 4.6vw, 68px); overflow: hidden; position: relative;">
+      <div style="position: absolute; right: -8%; top: -18%; width: 44%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(136,133,195,0.20) 0%, rgba(23,23,26,0) 66%); pointer-events: none;"></div>
+      <div data-reveal="" style="position: relative; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #A9A6D4;">Approach</div>
+        <h2 style="margin: 0; max-width: 820px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 300; letter-spacing: -0.028em; line-height: 1.12; text-wrap: pretty;">Vision, brand and system — then enough code to make it real</h2>
+      </div>
+      <div data-mq="900" data-mq-style="grid-template-columns: 1fr 1fr; gap: 34px" data-mq2="620" data-mq2-style="grid-template-columns: 1fr" style="position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;">
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #3A3A42; padding-top: 18px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: #8885C3;">01</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: -0.01em;">Product vision</div>
+          <div style="font-size: 13.5px; line-height: 1.66; color: #A5A5AE; text-wrap: pretty;">Co-developed the direction with the client: what the platform is for, which behaviours it should reward, and where personalization earns its place.</div>
+        </div>
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #3A3A42; padding-top: 18px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: #8885C3;">02</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: -0.01em;">Brand</div>
+          <div style="font-size: 13.5px; line-height: 1.66; color: #A5A5AE; text-wrap: pretty;">Logo, colour system, typography and visual assets, extended into presentation decks, sales materials and marketing collateral.</div>
+        </div>
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #3A3A42; padding-top: 18px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: #8885C3;">03</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: -0.01em;">System &amp; screens</div>
+          <div style="font-size: 13.5px; line-height: 1.66; color: #A5A5AE; text-wrap: pretty;">Information architecture, user journeys and interface patterns into a design system, then dozens of employee and employer screens in high fidelity.</div>
+        </div>
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #3A3A42; padding-top: 18px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: #8885C3;">04</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: -0.01em;">Initial build</div>
+          <div style="font-size: 13.5px; line-height: 1.66; color: #A5A5AE; text-wrap: pretty;">Established the React Native front end independently using Cursor: navigation, reusable interface foundations, placeholder data and early functional screens.</div>
+        </div>
+      </div>
+    </section>
+  
+
+  <section data-screen-label="Screens" style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(38px, 4.4vw, 62px);">
+    <div data-reveal="" style="display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">The employee app</div>
+        <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1;">Insight, then a next step</h2>
+      </div>
+      <div style="max-width: 340px; font-size: 13.5px; line-height: 1.62; color: #68686F; text-wrap: pretty;">Screening results become a plan; the plan earns points; points buy back into the benefits the employer already pays for.</div>
+    </div>
+
+    <div data-mq="1080" data-mq-style="grid-template-columns: repeat(2, 1fr)" data-mq2="620" data-mq2-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px 24px;">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 9 / 19; border-radius: 30px; border: 7px solid #242426; background: #EFEEF8; overflow: hidden; position: relative; color: #55555A;">
+          <img src="./assets/amplify-scr-plan.png" alt="Amplify today's plan screen" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;"><span style="color: #242426;">Today's plan</span> — the daily surface, built from the last screening.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 9 / 19; border-radius: 30px; border: 7px solid #242426; background: #EFEEF8; overflow: hidden; position: relative; color: #55555A;">
+          <img src="./assets/amplify-scr-biometrics.png" alt="Amplify biometric insights screen" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;"><span style="color: #242426;">Biometric insights</span> — results in plain language, with movement over time.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 9 / 19; border-radius: 30px; border: 7px solid #242426; background: #EFEEF8; overflow: hidden; position: relative; color: #55555A;">
+          <img src="./assets/amplify-scr-booking.png" alt="Amplify onsite booking screen" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;"><span style="color: #242426;">Onsite booking</span> — services the employer runs, bookable in two taps.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 9 / 19; border-radius: 30px; border: 7px solid #242426; background: #EFEEF8; overflow: hidden; position: relative; color: #55555A;">
+          <img src="./assets/amplify-scr-rewards.png" alt="Amplify points and rewards screen" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;"><span style="color: #242426;">Points &amp; rewards</span> — the incentive loop that keeps the app open.</div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #E4E4E0; padding-top: clamp(30px, 3.4vw, 48px);">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">The employer console</div>
+      <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3vw, 40px); font-weight: 600; letter-spacing: -0.026em; line-height: 1.12;">Participation, aggregated</h2>
+    </div>
+    <div data-mq="860" data-mq-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E4E4E0; background: #FFFFFF;">
+          <div style="display: flex; align-items: center; gap: 7px; padding: 10px 13px; border-bottom: 1px solid #EFEFEC;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E0E0DC;"></span>
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E0E0DC;"></span>
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E0E0DC;"></span>
+          </div>
+          <div style="aspect-ratio: 16 / 10; position: relative;">
+            <img src="./assets/amplify-session-reports.png" alt="Amplify session reports — attendance and participation" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+          </div>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;"><span style="color: #242426;">Workforce analytics</span> — participation and program health, never individual results.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E4E4E0; background: #FFFFFF;">
+          <div style="display: flex; align-items: center; gap: 7px; padding: 10px 13px; border-bottom: 1px solid #EFEFEC;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E0E0DC;"></span>
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E0E0DC;"></span>
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E0E0DC;"></span>
+          </div>
+          <div style="aspect-ratio: 16 / 10; position: relative;">
+            <img src="./assets/amplify-user-management.png" alt="Amplify user management — employee directory and bulk upload" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+          </div>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;"><span style="color: #242426;">Program administration</span> — onsite scheduling, rewards budget and communications.</div>
+      </div>
+    </div>
+  </section>
+
+  
+    <section data-screen-label="Design system" style="border-radius: 22px; background: radial-gradient(44% 54% at 96% 0%, rgba(136,133,195,0.22) 0%, rgba(136,133,195,0) 62%), #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(38px, 4.4vw, 60px);">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Design system</div>
+        <h2 style="margin: 0; max-width: 880px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">One vocabulary across two products</h2>
+      </div>
+      <div data-mq="900" data-mq-style="grid-template-columns: 1fr; gap: 34px" style="display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">The employee app and the employer console share one type scale, one spacing rhythm and one component library, so a change to a card or a form field lands in both. The system was documented alongside the screens rather than after them.</p>
+          <div data-reveal="" data-mq="620" data-mq-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px 30px;">
+            <div style="display: flex; flex-direction: column; gap: 5px; border-top: 1px solid #242426; padding-top: 13px;">
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600;">Foundations</div>
+              <div style="font-size: 13px; line-height: 1.6; color: #68686F;">Type scale, spacing, colour roles, elevation, iconography</div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; border-top: 1px solid #242426; padding-top: 13px;">
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600;">Components</div>
+              <div style="font-size: 13px; line-height: 1.6; color: #68686F;">Cards, metrics, forms, sheets, navigation, empty and loading states</div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; border-top: 1px solid #242426; padding-top: 13px;">
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600;">Patterns</div>
+              <div style="font-size: 13px; line-height: 1.6; color: #68686F;">Insight-to-action, booking, points earn and redeem</div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; border-top: 1px solid #242426; padding-top: 13px;">
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600;">Brand</div>
+              <div style="font-size: 13px; line-height: 1.6; color: #68686F;">Logo, colour system, typography, decks and sales collateral</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="border-radius: 16px; overflow: hidden; border: 1px solid #E4E4E0; background: #FFFFFF; aspect-ratio: 4 / 3; position: relative;">
+            <img src="./assets/amplify-design-system.png" alt="Amplify component library — logo, metric cards, coach message, points balance and progress rings" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          </div>
+          <div style="font-size: 12.5px; line-height: 1.5; color: #68686F;">The component library as it stood at handoff to development.</div>
+        </div>
+      </div>
+    </section>
+  
+
+  <section data-screen-label="Implementation" style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 48px);">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Into implementation</div>
+      <h2 style="margin: 0; max-width: 900px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">Designed against the build, not beside it</h2>
+    </div>
+    <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 26px" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+      <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">My involvement did not stop at static design. I began translating the product into React Native, which meant the design decisions were made with implementation constraints already in view rather than discovered afterward.</p>
+      <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #3C3C42; text-wrap: pretty;">Navigation, the reusable foundations and a set of early screens ran on placeholder data. Working in both places kept the visual system close to the thing actually being built, and kept the handoff short.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Outcome" style="border-radius: 22px; background: #EFE6DA; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: clamp(34px, 4vw, 54px);">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6E4A;">Where it landed</div>
+      <h2 style="margin: 0; max-width: 880px; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">Delivered: a brand, a product system and a running front end</h2>
+    </div>
+    <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 26px" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start;">
+      <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.68; color: #4A4034; text-wrap: pretty;">The initiative was paused before backend development, when funding for the next phase did not materialize. What exists is the parent brand refresh and marketing site, the Amplify identity, the product direction, the design system and high-fidelity screens across both audiences, plus a React Native front end running on placeholder data. The AI capabilities are product direction, not shipped functionality.</p>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid #DCD0BE;">
+        <div style="display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid #DCD0BE;">
+          <div style="font-size: 13px; color: #7A6E5E;">Brand</div>
+          <div style="font-size: 13px;">Delivered</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid #DCD0BE;">
+          <div style="font-size: 13px; color: #7A6E5E;">Design system</div>
+          <div style="font-size: 13px;">Delivered</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid #DCD0BE;">
+          <div style="font-size: 13px; color: #7A6E5E;">Front end</div>
+          <div style="font-size: 13px;">Initial build</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 18px; padding: 14px 0;">
+          <div style="font-size: 13px; color: #7A6E5E;">Backend</div>
+          <div style="font-size: 13px;">Not built</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Next" style="border-radius: 22px; background: #17171A; color: #FAFAF8; padding: clamp(52px, 8vw, 110px) clamp(26px, 5vw, 90px) clamp(34px, 4vw, 54px); display: flex; flex-direction: column; gap: clamp(40px, 5vw, 68px); overflow: hidden; position: relative;">
+    <div style="position: absolute; left: -6%; bottom: -24%; width: 44%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(136,133,195,0.22) 0%, rgba(23,23,26,0) 66%); pointer-events: none;"></div>
+    <a data-reveal="" href="./seedwell.html" style="position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; border-top: 1px solid #2E2E34; padding-top: 26px; color: #FAFAF8;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #A9A6D4;">Next case study</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 4vw, 56px); font-weight: 700; letter-spacing: -0.032em; line-height: 1;">Seedwell</div>
+      </div>
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8B8B95;">Fintech · 2019 — 2024</div>
+    </a>
+    <div data-reveal="" style="position: relative; display: flex; flex-direction: column; gap: 24px; max-width: 780px;">
+      <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3.2vw, 40px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.14; text-wrap: pretty;">Want the full walkthrough, including the parts that aren't public?</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="mailto:brian.bh.du@gmail.com" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #FAFAF8; color: #17171A; padding: 14px 22px; border-radius: 999px;">Email me</a>
+        <a href="./index.html#work" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #43434A; color: #E6E6EA; padding: 14px 22px; border-radius: 999px;">All work</a>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 11.5px; color: #6C6C76; border-top: 1px solid #2E2E34; padding-top: 26px;">
+      <div>© 2026 Brian Du. All rights reserved.</div>
+      <div>Design Engineer</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    this.mqEls = Array.from(root.querySelectorAll('[data-mq]'));
+    this.mqEls.forEach(el => { el.__mqBase = el.getAttribute('style') || ''; });
+    this.applyResponsive();
+    this.onResize = () => this.applyResponsive();
+    window.addEventListener('resize', this.onResize);
+
+    this.reveals = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    this.reveals.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translate3d(0, 18px, 0)';
+      el.style.transition = 'opacity 700ms cubic-bezier(.16,.84,.28,1), transform 700ms cubic-bezier(.16,.84,.28,1)';
+    });
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const sibs = el.parentElement ? Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal')) : [el];
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translate3d(0,0,0)'; }, Math.max(Math.min(sibs.indexOf(el), 5) * 70, 0));
+        this.io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    this.reveals.forEach(el => this.io.observe(el));
+  }
+
+  componentDidUpdate() { this.applyResponsive(); }
+
+  componentWillUnmount() {
+    if (this.onResize) window.removeEventListener('resize', this.onResize);
+    if (this.io) this.io.disconnect();
+  }
+
+  applyResponsive() {
+    const w = window.innerWidth || 0;
+    (this.mqEls || []).forEach(el => {
+      const op = el.style.opacity, tr = el.style.transform, ts = el.style.transition;
+      let s = el.__mqBase;
+      const t1 = parseFloat(el.getAttribute('data-mq'));
+      if (t1 && w <= t1) s += '; ' + (el.getAttribute('data-mq-style') || '');
+      const t2 = parseFloat(el.getAttribute('data-mq2'));
+      if (t2 && w <= t2) s += '; ' + (el.getAttribute('data-mq2-style') || '');
+      el.setAttribute('style', s);
+      if (op) el.style.opacity = op;
+      if (tr) el.style.transform = tr;
+      if (ts) el.style.transition = ts;
+    });
+  }
+
+  renderVals() {
+    return {
+      showProcess: this.props.showProcess ?? true,
+      showSystem: this.props.showSystem ?? true
+    };
+  }
+}
+
+window.__dcBoot = function __dcBoot() {
+  const root = document.querySelector('[data-dc-root]') || document.body;
+  const instance = new Component();
+  instance.el = root;
+  instance.props = {"showProcess":true,"showSystem":true};
+  if (typeof instance.componentDidMount === 'function') instance.componentDidMount();
+  if (typeof instance.renderVals === 'function') {
+    const vals = instance.renderVals() || {};
+    root.querySelectorAll('[data-bind]').forEach((node) => {
+      const key = node.getAttribute('data-bind');
+      if (key && vals[key] != null) node.textContent = vals[key];
+    });
+  }
+};
+document.addEventListener('DOMContentLoaded', window.__dcBoot);
+</script>
+</div>
+</body>
+</html>

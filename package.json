@@ -1,0 +1,11 @@
+{
+  "name": "brian-du-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brian Du personal portfolio — product design & front-end",
+  "scripts": {
+    "import:handoff": "node scripts/import-handoff.mjs",
+    "start": "npx --yes serve . -l 3000",
+    "dev": "npx --yes serve . -l 3000"
+  }
+}

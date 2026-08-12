@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brian Du — Product Design & Front-End</title>
+<meta name="description" content="Brian Du — product design, UX, design systems, and front-end engineering.">
+<link rel="icon" href="./brand-assets/bd-favicon-32.svg" type="image/svg+xml">
+<script src="./support.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: #EDEDEB; font-family: 'Inter', system-ui, sans-serif; color: #242426; -webkit-font-smoothing: antialiased; }
+  a { color: #6F6CAE; text-decoration: none; }
+  a:hover { color: #242426; }
+  ::selection { background: #DAD7EE; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div data-dc-root>
+<div data-mq="620" data-mq-style="padding: 9px; gap: 9px" style="width: 100%; overflow-x: hidden; padding: 14px; display: flex; flex-direction: column; gap: 14px;">
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Hero" data-mq="620" data-mq-style="padding: 15px 15px 24px; min-height: 100svh; border-radius: 16px" style="position: relative; border-radius: 22px; overflow: hidden; background: radial-gradient(66% 52% at 6% 2%, rgba(231,201,211,0.55) 0%, rgba(231,201,211,0) 62%), radial-gradient(58% 58% at 40% -8%, rgba(136,133,195,0.30) 0%, rgba(136,133,195,0) 64%), radial-gradient(54% 50% at 94% 8%, rgba(168,196,222,0.44) 0%, rgba(168,196,222,0) 60%), #E4E4E1; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 22px 26px 30px;">
+
+    <div data-mq="620" data-mq-style="padding: 7px 7px 7px 11px" style="position: relative; z-index: 4; display: flex; justify-content: space-between; align-items: center; background: #FAFAF8; border-radius: 999px; padding: 10px 14px 10px 13px;">
+      <div data-mq="620" data-mq-style="gap: 8px" style="display: flex; align-items: center; gap: 11px;">
+        <svg viewBox="0 0 140 140" width="25" height="25" aria-hidden="true"><path d="M30 22H70a48 48 0 0 1 0 96H30Z" fill="#242426"></path><path d="M45 36h25a34 34 0 0 1 0 68H45Z" fill="#8885C3"></path><path d="M45 24h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#242426"></path><path d="M45 65h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#242426"></path><path d="M45 37h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#FAFAF8"></path><path d="M45 78h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#FAFAF8"></path></svg>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.01em;">Brian Du</div>
+      </div>
+      <nav data-mq="620" data-mq-style="gap: 9px; font-size: 9.5px; letter-spacing: 0.1em" style="display: flex; align-items: center; gap: 18px; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;">
+        <a href="#work" style="color: #68686F;">Work</a>
+        <div data-mq="820" data-mq-style="display: none" style="display: flex; align-items: center; gap: 18px;">
+          <span style="color: #CFCFC9;">/</span>
+          <a href="#approach" style="color: #68686F;">Approach</a>
+          <span style="color: #CFCFC9;">/</span>
+          <a href="#experience" style="color: #68686F;">Experience</a>
+        </div>
+        <span style="color: #CFCFC9;">/</span>
+        <a href="./resume.html" style="color: #68686F;">Résumé</a>
+        <a href="#contact" data-mq="620" data-mq-style="padding: 7px 12px" style="border: 1px solid #242426; border-radius: 999px; padding: 8px 15px; color: #242426;">Contact</a>
+      </nav>
+    </div>
+
+    <svg data-parallax="0.16" viewBox="0 0 400 300" data-mq="620" data-mq-style="left: 3%; top: 16%; width: 70%" style="position: absolute; left: 7%; top: 13%; width: 40%; max-width: 520px; z-index: 1; pointer-events: none;" aria-hidden="true"><g fill="none" stroke="#8885C3" stroke-width="1" opacity="0.55"><path d="M8 292C8 130 130 8 292 8"></path><path d="M52 292C52 154 154 52 292 52"></path><path d="M96 292C96 178 178 96 292 96"></path></g></svg>
+
+    <div data-hero-name data-parallax="-0.09" style="position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); z-index: 2; display: flex; justify-content: center; pointer-events: none;">
+      <div data-mq="620" data-mq-style="white-space: normal; text-align: center; font-size: clamp(64px, 21vw, 112px); line-height: 0.86" style="font-family: 'Montserrat', sans-serif; font-size: clamp(64px, 13.4vw, 250px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.92; color: #242426; white-space: nowrap;">BRIAN DU</div>
+    </div>
+
+    <div data-figure data-mq="1100" data-mq-style="width: 80%; height: 66%; bottom: 150px; top: auto" data-mq2="620" data-mq2-style="width: 88%; height: 52%; bottom: 150px; top: auto" style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); z-index: 3; width: min(58vw, clamp(300px, 64vh, 1150px)); height: 96%; display: flex; align-items: flex-end; justify-content: center;">
+      <div data-figure-inner style="position: relative; width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center;">
+        <div data-figure-fallback style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8%;z-index:2;">
+          <img src="./brand-assets/bd-mark-primary.svg" alt="Brian Du" style="width:min(42%,320px);height:auto;opacity:0.92;" />
+        </div>
+        <img data-frame-img src="./frames/figure-28.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-29.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-30.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-31.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-32.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-33.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-34.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-35.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-36.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-01.png" alt="Brian Du" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-02.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-03.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-04.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-05.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-06.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-07.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-08.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-09.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <img data-frame-img src="./frames/figure-10.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; opacity: 1;" />
+        <div data-frame-readout style="position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; color: #6F6CAE;">FRAME 01 / 10</div>
+      </div>
+    </div>
+
+    <div data-mq="1100" data-mq-style="flex-direction: column; align-items: flex-start; gap: 18px" style="position: relative; z-index: 4; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px; max-width: 300px;">
+        <div style="display: flex; flex-direction: column; gap: 2px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;">
+          <div>Design Engineer</div>
+          <div style="color: #68686F; font-weight: 500;">Product Designer</div>
+          <div style="color: #68686F; font-weight: 500;">Front-End Developer</div>
+        </div>
+      </div>
+      <div data-mq="1100" data-mq-style="display: none" style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="font-size: 11.5px; color: #FFFFFF;">Scroll down</div>
+        <div data-scroll-cue style="font-size: 16px; color: #FFFFFF; line-height: 1;">↓</div>
+      </div>
+      <div data-reveal style="max-width: 340px; font-size: 13.5px; line-height: 1.62; color: #4C4C52; text-wrap: pretty;">I design and build complex digital products—from strategy and UX through production-ready interfaces.</div>
+    </div>
+  </section>
+
+  <!-- ============ POSITIONING ============ -->
+  <section style="border-radius: 22px; background: radial-gradient(52% 68% at 3% -2%, rgba(231,201,211,0.62) 0%, rgba(231,201,211,0) 64%), radial-gradient(46% 72% at 26% -10%, rgba(136,133,195,0.34) 0%, rgba(136,133,195,0) 66%), radial-gradient(44% 62% at 56% -6%, rgba(168,196,222,0.50) 0%, rgba(168,196,222,0) 62%), #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: 44px;">
+    <div data-reveal style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Positioning</div>
+    <p data-reveal style="margin: 0; max-width: 1000px; font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3.1vw, 46px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.26; text-wrap: pretty;">Ten years across product strategy, UX, design systems and front-end engineering — most recently carrying a clinical platform from brand and blank Figma file through React implementation and full-stack ownership.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 26px 34px; border-top: 1px solid #E4E4E0; padding-top: 34px;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6CAE;">End to end</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #4C4C52; text-wrap: pretty;">Strategy and UX through production-ready interfaces, on one pair of hands.</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6CAE;">Web and mobile</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #4C4C52; text-wrap: pretty;">Responsive web and React Native, designed and built against the same system.</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6CAE;">Design systems</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #4C4C52; text-wrap: pretty;">Component libraries that survive contact with 180 routes and 100+ forms.</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6CAE;">AI-assisted delivery</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #4C4C52; text-wrap: pretty;">Agentic workflows for architecture, debugging and implementation speed.</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6F6CAE;">Product leadership</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #4C4C52; text-wrap: pretty;">Co-founder and engineering lead; managed developers through pre-launch.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section id="work" data-screen-label="Selected work" data-mq="620" data-mq-style="gap: 44px" style="border-radius: 22px; background: radial-gradient(46% 58% at 100% -2%, rgba(168,196,222,0.44) 0%, rgba(168,196,222,0) 62%), radial-gradient(42% 56% at 76% -8%, rgba(136,133,195,0.26) 0%, rgba(136,133,195,0) 64%), #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px) clamp(40px, 5vw, 80px); display: flex; flex-direction: column; gap: 60px;">
+
+    <div data-mq="860" data-mq-style="flex-direction: column; align-items: flex-start; gap: 20px" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; border-bottom: 1px solid #242426; padding-bottom: 20px;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Selected work</div>
+        <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(34px, 5vw, 72px); font-weight: 700; letter-spacing: -0.032em; line-height: 0.98;">Two platforms</h2>
+      </div>
+      <div data-reveal style="max-width: 300px; font-size: 13.5px; line-height: 1.62; color: #68686F; text-wrap: pretty;">Workplace wellness and fintech. Each carried from strategy through implementation.</div>
+    </div>
+
+    <article data-reveal style="display: flex; flex-direction: column; gap: 22px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: baseline; gap: 18px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #A8A5C0;">01</div>
+          <h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3.2vw, 44px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.06;"><a href="./amplify.html" style="color: #242426;" data-style-hover="color: #6F6CAE">Amplify</a></h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 20px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;">
+          <span style="color: #68686F;">2025 — 2026</span>
+          <a href="./amplify.html" style="color: #6F6CAE;" data-style-hover="color: #242426">Case study →</a>
+        </div>
+      </div>
+      <div data-mq="620" data-mq-style="grid-template-columns: 1fr" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div style="border-radius: 16px; overflow: hidden; background: #EFE6DA; aspect-ratio: 4 / 3; position: relative;">
+          <img src="./assets/amplify-home-card.png" alt="Amplify employee mobile app — points, weekly streak, rewards and settings" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
+        </div>
+        <div style="border-radius: 16px; overflow: hidden; background: #EFEEF8; aspect-ratio: 4 / 3; position: relative;">
+          <img src="./assets/amplify-home-dashboard.png" alt="Amplify employer admin dashboard — stress score, participation and engagement trends" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
+        </div>
+      </div>
+      <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 24px" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 30px 40px;">
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.65; color: #3C3C42; text-wrap: pretty;">A zero-to-one workplace wellness and employee-benefits platform. I co-developed the product vision and owned the complete brand and design system, then designed the employee mobile app and employer administration experience — biometric insights, personalized recommendations, service booking and incentive programs — and built the initial React Native front end.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Role</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">Lead product designer &amp; front-end consultant</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Platform</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">React Native, responsive web</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Stack</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">React Native, Expo, TypeScript</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Scope</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">Brand, product system, initial build</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article data-reveal style="display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #E4E4E0; padding-top: 50px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: baseline; gap: 18px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #A8A5C0;">02</div>
+          <h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3.2vw, 44px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.06;"><a href="./seedwell.html" style="color: #242426;" data-style-hover="color: #6F6CAE">Seedwell</a></h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 20px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;">
+          <span style="color: #68686F;">2019 — 2024</span>
+          <a href="./seedwell.html" style="color: #6F6CAE;" data-style-hover="color: #242426">Case study →</a>
+        </div>
+      </div>
+      <div style="border-radius: 16px; overflow: hidden; background: #9C8FCE; aspect-ratio: 4000 / 1722; position: relative;">
+        <img src="./assets/seedwell-home-wide-v3.png" alt="Seedwell member app and employer portal — knowledge center, banking, payroll and allocations" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
+      </div>
+      <div data-mq="860" data-mq-style="grid-template-columns: 1fr; gap: 24px" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 30px 40px;">
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.65; color: #3C3C42; text-wrap: pretty;">A B2B2C fintech platform combining employee financial wellness, payroll-based automation and neobanking. As co-founder and head of engineering I owned brand and product design direction, designed and built nearly all front-end experiences, led front-end architecture and managed junior developers. Supported 14 partner pilots and seven signed contracts representing roughly 135,000 potential users.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Role</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">Co-founder &amp; head of engineering</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Platform</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">Consumer app, employer portal, web</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Stack</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">React, GraphQL, Redux Toolkit</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A0A0A6;">Recognition</div>
+            <div style="font-size: 13.5px; line-height: 1.5;">NEXT AI graduate</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ LIFECYCLE ============ -->
+  <section style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: 52px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">What I do</div>
+        <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 4.2vw, 60px); font-weight: 700; letter-spacing: -0.03em; line-height: 1;">One continuous process</h2>
+      </div>
+      <div data-reveal style="max-width: 330px; font-size: 13.5px; line-height: 1.62; color: #68686F; text-wrap: pretty;">Not a handoff between a designer and a developer. The same person carries the decision from discovery to production.</div>
+    </div>
+
+    <div data-lifecycle style="position: relative; display: flex; flex-direction: column; gap: 20px;">
+      <svg viewBox="0 0 1200 8" preserveAspectRatio="none" style="width: 100%; height: 8px; overflow: visible;" aria-hidden="true">
+        <line x1="0" y1="4" x2="1200" y2="4" stroke="#E4E4E0" stroke-width="1"></line>
+        <line data-lifecycle-line x1="0" y1="4" x2="1200" y2="4" stroke="#8885C3" stroke-width="2" stroke-dasharray="1200" stroke-dashoffset="1200"></line>
+      </svg>
+      <div data-mq="900" data-mq-style="grid-template-columns: repeat(2, 1fr); gap: 24px 20px" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px;">
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Discover</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Stakeholders, constraints, existing systems</div></div>
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Define</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Roles, workflows, information architecture</div></div>
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Design</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Interaction, visual system, components</div></div>
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Prototype</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Real interaction, tested against edge cases</div></div>
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Build</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Production React, web and native</div></div>
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Launch</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Integrations, UAT, release</div></div>
+        <div data-stage style="display: flex; flex-direction: column; gap: 8px;"><div style="width: 7px; height: 7px; border-radius: 50%; background: #8885C3;"></div><div style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em;">Improve</div><div style="font-size: 11.5px; line-height: 1.5; color: #68686F; text-wrap: pretty;">Instrumentation, iteration, refactoring</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section id="approach" data-screen-label="Approach" style="border-radius: 22px; background: #17171A; color: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: 56px; overflow: hidden; position: relative;">
+    <div data-parallax="0.1" style="position: absolute; right: -8%; top: -14%; width: 46%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(136,133,195,0.24) 0%, rgba(23,23,26,0) 68%); pointer-events: none;"></div>
+
+    <div data-reveal style="position: relative; display: flex; flex-direction: column; gap: 26px; max-width: 900px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #A9A6D4;">Design and engineering</div>
+      <p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.9vw, 42px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.28; text-wrap: pretty;">I do not stop at handing off a design. I work through interaction details, technical constraints, responsive behaviour, production implementation, testing, and iteration.</p>
+    </div>
+
+    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+      <div data-reveal style="border: 1px solid #2E2E34; border-radius: 16px; padding: 26px 24px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8885C3;">In design</div>
+        <div style="font-size: 14px; line-height: 1.62; color: #B6B6BC; text-wrap: pretty;">Decisions are made knowing what they cost to build. A layout that needs a virtualized list gets designed as one.</div>
+      </div>
+      <div data-reveal style="border: 1px solid #2E2E34; border-radius: 16px; padding: 26px 24px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8885C3;">In code</div>
+        <div style="font-size: 14px; line-height: 1.62; color: #B6B6BC; text-wrap: pretty;">Components carry the system rather than approximate it. Spacing, states and motion match the intent because the same person set both.</div>
+      </div>
+      <div data-reveal style="border: 1px solid #2E2E34; border-radius: 16px; padding: 26px 24px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8885C3;">In delivery</div>
+        <div style="font-size: 14px; line-height: 1.62; color: #B6B6BC; text-wrap: pretty;">Edge cases, empty states, error handling and permissions get resolved during implementation, not deferred to a follow-up ticket.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: 46px;">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Selected capabilities</div>
+      <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 4.2vw, 60px); font-weight: 700; letter-spacing: -0.03em; line-height: 1;">What I work with</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 34px 44px;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #242426; padding-top: 16px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;">Product &amp; Design</div>
+        <div style="font-size: 13.5px; line-height: 1.7; color: #4C4C52; text-wrap: pretty;">Product strategy · UX/UI · Information architecture · Interaction design · Design systems · Responsive and mobile UX · Branding · Figma</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #242426; padding-top: 16px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;">Front End</div>
+        <div style="font-size: 13.5px; line-height: 1.7; color: #4C4C52; text-wrap: pretty;">React · Next.js · React Native · Expo · TypeScript · JavaScript · Material UI · Redux · GraphQL · React Hook Form</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #242426; padding-top: 16px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;">Backend &amp; Platform</div>
+        <div style="font-size: 13.5px; line-height: 1.7; color: #4C4C52; text-wrap: pretty;">Supabase · PostgreSQL · Node.js · Express · Authentication · Row-level security · Edge Functions · APIs · Webhooks</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #242426; padding-top: 16px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;">AI-Assisted Development</div>
+        <div style="font-size: 13.5px; line-height: 1.7; color: #4C4C52; text-wrap: pretty;">Cursor · Claude Code · Agentic workflows · Rapid prototyping · Context engineering · Debugging · Refactoring · Code review</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" data-screen-label="Experience" style="border-radius: 22px; background: #FAFAF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: flex; flex-direction: column; gap: 44px;">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Experience</div>
+      <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 4.2vw, 60px); font-weight: 700; letter-spacing: -0.03em; line-height: 1;">Ten years, five seats</h2>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div data-reveal style="display: grid; grid-template-columns: 148px 1fr auto; gap: 20px 30px; align-items: baseline; border-top: 1px solid #E4E4E0; padding: 18px 0;" data-mq="760" data-mq-style="grid-template-columns: 1fr; gap: 5px; padding: 16px 0">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #68686F;">2024 — Present</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; letter-spacing: -0.01em;">Independent Product Design &amp; Engineering Consultant</div>
+        <div style="font-size: 12.5px; color: #A0A0A6;">Consulting</div>
+      </div>
+      <div data-reveal style="display: grid; grid-template-columns: 148px 1fr auto; gap: 20px 30px; align-items: baseline; border-top: 1px solid #E4E4E0; padding: 18px 0;" data-mq="760" data-mq-style="grid-template-columns: 1fr; gap: 5px; padding: 16px 0">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #68686F;">2019 — 2024</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; letter-spacing: -0.01em;">Co-Founder &amp; Head of Engineering, Seedwell</div>
+        <div style="font-size: 12.5px; color: #A0A0A6;">Fintech</div>
+      </div>
+      <div data-reveal style="display: grid; grid-template-columns: 148px 1fr auto; gap: 20px 30px; align-items: baseline; border-top: 1px solid #E4E4E0; padding: 18px 0;" data-mq="760" data-mq-style="grid-template-columns: 1fr; gap: 5px; padding: 16px 0">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #68686F;">2019</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; letter-spacing: -0.01em;">UI/UX Designer, dbrand</div>
+        <div style="font-size: 12.5px; color: #A0A0A6;">E-commerce</div>
+      </div>
+      <div data-reveal style="display: grid; grid-template-columns: 148px 1fr auto; gap: 20px 30px; align-items: baseline; border-top: 1px solid #E4E4E0; padding: 18px 0;" data-mq="760" data-mq-style="grid-template-columns: 1fr; gap: 5px; padding: 16px 0">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #68686F;">2017 — 2019</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; letter-spacing: -0.01em;">UI/UX Designer &amp; Front-End Developer, Zoocasa</div>
+        <div style="font-size: 12.5px; color: #A0A0A6;">Real estate</div>
+      </div>
+      <div data-reveal style="display: grid; grid-template-columns: 148px 1fr auto; gap: 20px 30px; align-items: baseline; border-top: 1px solid #E4E4E0; border-bottom: 1px solid #E4E4E0; padding: 18px 0;" data-mq="760" data-mq-style="grid-template-columns: 1fr; gap: 5px; padding: 16px 0">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #68686F;">2015 — 2017</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: clamp(16px, 1.8vw, 22px); font-weight: 500; letter-spacing: -0.01em;">UI/UX Lead Designer, Prelook</div>
+        <div style="font-size: 12.5px; color: #A0A0A6;">Startup</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <section style="border-radius: 22px; background: radial-gradient(54% 68% at 97% 4%, rgba(231,201,211,0.52) 0%, rgba(231,201,211,0) 62%), radial-gradient(58% 68% at 1% 97%, rgba(168,196,222,0.48) 0%, rgba(168,196,222,0) 62%), #EFEEF8; padding: clamp(48px, 7vw, 110px) clamp(26px, 5vw, 90px); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px 60px;">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #6F6CAE;">Personal</div>
+      <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.6vw, 50px); font-weight: 400; letter-spacing: -0.025em; line-height: 1.08;">How I got here</h2>
+    </div>
+    <div data-reveal style="display: flex; flex-direction: column; gap: 18px; font-size: 15px; line-height: 1.72; color: #3C3C46; max-width: 620px;">
+      <p style="margin: 0; text-wrap: pretty;">I trained as an interior designer, which is where I learned to think about how people move through a space and what a system of parts has to hold up under.</p>
+      <p style="margin: 0; text-wrap: pretty;">A full-stack immersive moved that thinking to the web. Product design and front-end roles followed — real estate, e-commerce, an employer-discovery startup — then five years co-founding a fintech company where I owned design and led the front end through pre-launch.</p>
+      <p style="margin: 0; text-wrap: pretty;">Since 2024 I have been consulting on health-tech and workplace wellness platforms, working across mobile, full-stack delivery and AI-assisted development. The through line is the same: design the thing properly, then build it properly.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" data-screen-label="Contact" style="border-radius: 22px; background: #17171A; color: #FAFAF8; padding: clamp(52px, 8vw, 120px) clamp(26px, 5vw, 90px) clamp(34px, 4vw, 54px); display: flex; flex-direction: column; gap: 58px; overflow: hidden; position: relative;">
+    <div data-parallax="0.12" style="position: absolute; left: -6%; bottom: -22%; width: 42%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(136,133,195,0.22) 0%, rgba(23,23,26,0) 66%); pointer-events: none;"></div>
+
+    <div data-reveal style="position: relative; display: flex; flex-direction: column; gap: 26px; max-width: 880px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #A9A6D4;">Contact</div>
+      <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 4vw, 56px); font-weight: 400; letter-spacing: -0.028em; line-height: 1.1; text-wrap: pretty;">Have a complex product that needs both design judgment and technical execution? Let's talk.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="mailto:brian.bh.du@gmail.com" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #FAFAF8; color: #17171A; padding: 14px 22px; border-radius: 999px;">Email me</a>
+        <a href="./resume.html" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #43434A; color: #E6E6EA; padding: 14px 22px; border-radius: 999px;">Download résumé</a>
+      </div>
+    </div>
+
+    <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 26px 40px; border-top: 1px solid #2E2E34; padding-top: 32px;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6C6C76;">Location</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #E6E6EA;">Markham, Ontario<br>Greater Toronto Area</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6C6C76;">Email</div>
+        <div style="font-size: 14px; line-height: 1.55;"><a href="mailto:brian.bh.du@gmail.com" style="color: #E6E6EA;">brian.bh.du@gmail.com</a></div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6C6C76;">Phone</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #E6E6EA;">416-624-5318</div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #6C6C76;">Elsewhere</div>
+        <div style="font-size: 14px; line-height: 1.55;"><a href="https://linkedin.com/in/brianbhdu" style="color: #E6E6EA;">LinkedIn</a></div>
+      </div>
+    </div>
+
+    <div style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 11.5px; color: #6C6C76;">
+      <div>© 2026 Brian Du. All rights reserved.</div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg viewBox="0 0 140 140" width="18" height="18" aria-hidden="true"><path d="M30 22H70a48 48 0 0 1 0 96H30Z" fill="#6C6C76"></path><path d="M45 24h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#6C6C76"></path><path d="M45 65h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#6C6C76"></path><path d="M45 37h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#17171A"></path><path d="M45 78h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#17171A"></path></svg>
+        <span>Design Engineer</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    this.root = root;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.reduced = mq.matches || this.props.motion === 'off';
+    this.intensity = this.props.parallaxIntensity ?? 1;
+    this.subtle = this.props.motion === 'subtle';
+
+    this.parallax = Array.from(root.querySelectorAll('[data-parallax]'));
+    this.reveals = Array.from(root.querySelectorAll('[data-reveal]'));
+    this.stages = Array.from(root.querySelectorAll('[data-stage]'));
+    this.line = root.querySelector('[data-lifecycle-line]');
+    this.lifecycle = root.querySelector('[data-lifecycle]');
+    this.figure = root.querySelector('[data-figure-inner]');
+    this.readout = root.querySelector('[data-frame-readout]');
+    this.frameImgs = Array.from(root.querySelectorAll('[data-frame-img]'));
+    this.frameIndex = 0;
+    this.frameImgs.forEach(img => { const p = new Image(); p.src = img.getAttribute('src'); });
+    this.cue = root.querySelector('[data-scroll-cue]');
+
+    this.mqEls = Array.from(root.querySelectorAll('[data-mq]'));
+    this.mqEls.forEach(el => { el.__mqBase = el.getAttribute('style') || ''; });
+    this.applyResponsive();
+    this.onResize = () => { this.applyResponsive(); if (this.onScroll) this.onScroll(); };
+    window.addEventListener('resize', this.onResize);
+
+    if (this.reduced) { this.revealAll(); this.drawLine(1); return; }
+
+    this.reveals.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translate3d(0, 22px, 0)';
+      el.style.transition = 'opacity 700ms cubic-bezier(.16,.84,.28,1), transform 700ms cubic-bezier(.16,.84,.28,1)';
+      el.style.willChange = 'opacity, transform';
+    });
+    this.stages.forEach(el => {
+      el.style.opacity = '0.28';
+      el.style.transition = 'opacity 500ms ease';
+    });
+
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const siblings = el.parentElement ? Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal')) : [el];
+        const delay = Math.min(siblings.indexOf(el), 5) * 70;
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translate3d(0,0,0)'; }, Math.max(delay, 0));
+        this.io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    this.reveals.forEach(el => this.io.observe(el));
+
+    this.frame = null;
+    this.onScroll = () => {
+      if (this.frame) return;
+      this.frame = requestAnimationFrame(() => { this.frame = null; this.update(); });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+
+    this.pointer = 0;
+    this.pointerTarget = 0;
+    this.onMove = e => {
+      const w = window.innerWidth || 1;
+      this.pointerTarget = Math.max(-1, Math.min(1, (e.clientX / w - 0.5) * 2));
+    };
+    this.onLeave = () => { this.pointerTarget = 0; };
+    window.addEventListener('pointermove', this.onMove, { passive: true });
+    window.addEventListener('pointerleave', this.onLeave);
+
+    this.tick = () => {
+      this.pointer += (this.pointerTarget - this.pointer) * 0.07;
+      this.applyFigure();
+      this.raf = requestAnimationFrame(this.tick);
+    };
+    this.raf = requestAnimationFrame(this.tick);
+
+    this.update();
+  }
+
+  componentDidUpdate() { this.applyResponsive(); }
+
+  componentWillUnmount() {
+    if (this.onResize) window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    window.removeEventListener('pointermove', this.onMove);
+    window.removeEventListener('pointerleave', this.onLeave);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.frame) cancelAnimationFrame(this.frame);
+    if (this.io) this.io.disconnect();
+  }
+
+  applyResponsive() {
+    const w = window.innerWidth || 0;
+    (this.mqEls || []).forEach(el => {
+      const op = el.style.opacity, tr = el.style.transform, ts = el.style.transition;
+      let s = el.__mqBase;
+      const t1 = parseFloat(el.getAttribute('data-mq'));
+      if (t1 && w <= t1) s += '; ' + (el.getAttribute('data-mq-style') || '');
+      const t2 = parseFloat(el.getAttribute('data-mq2'));
+      if (t2 && w <= t2) s += '; ' + (el.getAttribute('data-mq2-style') || '');
+      el.setAttribute('style', s);
+      if (op) el.style.opacity = op;
+      if (tr) el.style.transform = tr;
+      if (ts) el.style.transition = ts;
+    });
+  }
+
+  revealAll() {
+    this.reveals.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    this.stages.forEach(el => { el.style.opacity = '1'; });
+  }
+
+  drawLine(progress) {
+    if (!this.line) return;
+    this.line.setAttribute('stroke-dashoffset', String(1200 * (1 - Math.max(0, Math.min(1, progress)))));
+  }
+
+  applyFigure() {
+    if (!this.figure) return;
+    const amount = this.subtle ? 0.5 : 1;
+    const shift = this.pointer * 10 * amount * this.intensity;
+    this.figure.style.transform = 'translate3d(' + shift.toFixed(1) + 'px,0,0)';
+
+    const frames = this.frameImgs || [];
+    const n = frames.length;
+    if (n) {
+      const p = Math.max(-1, Math.min(1, this.pointer * this.intensity));
+      const i = Math.max(0, Math.min(n - 1, Math.round(((p + 1) / 2) * (n - 1))));
+      if (i !== this.frameIndex) {
+        this.frameIndex = i;
+        frames.forEach((img, k) => { img.style.opacity = k === i ? '1' : '0'; });
+      }
+      if (this.readout) {
+        this.readout.textContent = 'FRAME ' + String(i + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
+      }
+    }
+  }
+
+  update() {
+    const vh = window.innerHeight || 1;
+    const centre = vh / 2;
+    const amount = (this.subtle ? 0.5 : 1) * this.intensity;
+
+    this.parallax.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < -vh || rect.top > vh * 2) return;
+      const speed = parseFloat(el.getAttribute('data-parallax')) || 0;
+      let offset = (centre - (rect.top + rect.height / 2)) * speed * amount;
+      const host = el.offsetParent;
+      const bleed = host ? (el.offsetHeight - host.clientHeight) / 2 : 0;
+      if (bleed > 0) offset = Math.max(-bleed, Math.min(bleed, offset));
+      const base = el.hasAttribute('data-hero-name') ? 'translateY(-50%) ' : '';
+      el.style.transform = base + 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+    });
+
+    if (this.lifecycle) {
+      const rect = this.lifecycle.getBoundingClientRect();
+      const progress = (vh * 0.85 - rect.top) / (rect.height + vh * 0.3);
+      this.drawLine(progress);
+      const active = Math.floor(Math.max(0, Math.min(1, progress)) * (this.stages.length + 0.6));
+      this.stages.forEach((el, i) => { el.style.opacity = i <= active ? '1' : '0.28'; });
+    }
+
+    if (this.cue) {
+      const y = window.scrollY || 0;
+      this.cue.style.opacity = String(Math.max(0, 1 - y / (vh * 0.4)));
+    }
+  }
+
+  renderVals() { return {}; }
+}
+
+window.__dcBoot = function __dcBoot() {
+  const root = document.querySelector('[data-dc-root]') || document.body;
+  const instance = new Component();
+  instance.el = root;
+  instance.props = {"motion":"full","parallaxIntensity":1};
+  if (typeof instance.componentDidMount === 'function') instance.componentDidMount();
+  if (typeof instance.renderVals === 'function') {
+    const vals = instance.renderVals() || {};
+    root.querySelectorAll('[data-bind]').forEach((node) => {
+      const key = node.getAttribute('data-bind');
+      if (key && vals[key] != null) node.textContent = vals[key];
+    });
+  }
+};
+document.addEventListener('DOMContentLoaded', window.__dcBoot);
+</script>
+</div>
+</body>
+</html>
