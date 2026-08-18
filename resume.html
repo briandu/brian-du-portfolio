@@ -17,6 +17,19 @@
   a { color: #6F6CAE; text-decoration: none; }
   a:hover { color: #242426; }
   ::selection { background: #DAD7EE; }
+  @media print {
+    @page { size: letter; margin: 0.32in; }
+    html, body { background: #EDEDEB !important; color: #242426 !important; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    [data-print-hide] { display: none !important; }
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    [data-dc-root] > div { overflow: visible !important; }
+  }
 </style>
 </head>
 <body>
@@ -25,7 +38,7 @@
 
   <section data-screen-label="Résumé header" data-mq="620" data-mq-style="padding: 15px 15px 30px; border-radius: 16px" style="position: relative; border-radius: 22px; overflow: hidden; background: radial-gradient(60% 54% at 5% 3%, rgba(231,201,211,0.55) 0%, rgba(231,201,211,0) 62%), radial-gradient(56% 58% at 38% -8%, rgba(136,133,195,0.30) 0%, rgba(136,133,195,0) 64%), radial-gradient(52% 50% at 95% 8%, rgba(168,196,222,0.44) 0%, rgba(168,196,222,0) 60%), #E4E4E1; padding: 22px 26px 44px; display: flex; flex-direction: column; gap: clamp(52px, 7vw, 104px);">
 
-    <div data-mq="620" data-mq-style="padding: 7px 7px 7px 11px" style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; background: #FAFAF8; border-radius: 999px; padding: 10px 14px 10px 13px;">
+    <div data-print-hide data-mq="620" data-mq-style="padding: 7px 7px 7px 11px" style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; background: #FAFAF8; border-radius: 999px; padding: 10px 14px 10px 13px;">
       <a href="./index.html" data-mq="620" data-mq-style="gap: 8px" style="display: flex; align-items: center; gap: 11px; color: #242426;">
         <svg viewBox="0 0 140 140" width="25" height="25" aria-hidden="true"><path d="M30 22H70a48 48 0 0 1 0 96H30Z" fill="#242426"></path><path d="M45 36h25a34 34 0 0 1 0 68H45Z" fill="#8885C3"></path><path d="M45 24h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#242426"></path><path d="M45 65h8.5a25.5 25.5 0 0 1 0 51H45Z" fill="#242426"></path><path d="M45 37h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#FAFAF8"></path><path d="M45 78h8.5a12.5 12.5 0 0 1 0 25H45Z" fill="#FAFAF8"></path></svg>
         <div style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.01em;">Brian Du</div>
@@ -52,9 +65,9 @@
         <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(40px, 6.4vw, 92px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.02;">Design Engineer</h1>
       </div>
       <p data-mq="620" data-mq-style="font-size: 14.5px" style="margin: 0; max-width: 680px; font-size: 16px; line-height: 1.65; color: #4C4C52; text-wrap: pretty;">Ten years across product strategy, UX, design systems and front-end engineering. Most recently carrying a clinical platform from brand and blank Figma file through React implementation and full-stack ownership.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <a href="./Resume.dc.html" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #242426; color: #FAFAF8; padding: 14px 22px; border-radius: 999px;">Printable résumé</a>
-        <a href="mailto:brian.bh.du@gmail.com" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #242426; color: #242426; padding: 14px 22px; border-radius: 999px;">Email me</a>
+      <div data-print-hide style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <a href="./resume.html?print=1" data-print-resume style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #242426; color: #FAFAF8; padding: 14px 22px; border-radius: 999px;">Download PDF</a>
+        <a href="mailto:brian.bh.du@gmail.com" data-copy-email="brian.bh.du@gmail.com" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #242426; color: #242426; padding: 14px 22px; border-radius: 999px;">Email me</a>
       </div>
       <div data-mq="620" data-mq-style="grid-template-columns: 1fr 1fr; gap: 18px 20px" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px 34px; max-width: 900px; border-top: 1px solid rgba(36,36,38,0.14); padding-top: 24px;">
         <div style="display: flex; flex-direction: column; gap: 5px;">
@@ -75,7 +88,7 @@
         </div>
       </div>
     </div>
-    <svg viewBox="0 0 400 400" data-mq="900" data-mq-style="display: none" style="flex: 0 0 auto; width: 260px; height: 260px; align-self: flex-end; pointer-events: none;" aria-hidden="true">
+    <svg data-print-hide viewBox="0 0 400 400" data-mq="900" data-mq-style="display: none" style="flex: 0 0 auto; width: 260px; height: 260px; align-self: flex-end; pointer-events: none;" aria-hidden="true">
       <g fill="none" stroke="#8885C3" stroke-width="1" opacity="0.45" transform="scale(-1,1) translate(-400,0)">
         <path d="M340 400C340 212 188 60 0 60"></path>
         <path d="M250 400C250 262 138 150 0 150"></path>
@@ -226,14 +239,14 @@
     </div>
   </section>
 
-  <section id="contact" data-screen-label="Contact" style="border-radius: 22px; background: #17171A; color: #FAFAF8; padding: clamp(52px, 8vw, 110px) clamp(26px, 5vw, 90px) clamp(34px, 4vw, 54px); display: flex; flex-direction: column; gap: 48px; overflow: hidden; position: relative;">
+  <section id="contact" data-print-hide data-screen-label="Contact" style="border-radius: 22px; background: #17171A; color: #FAFAF8; padding: clamp(52px, 8vw, 110px) clamp(26px, 5vw, 90px) clamp(34px, 4vw, 54px); display: flex; flex-direction: column; gap: 48px; overflow: hidden; position: relative;">
     <div style="position: absolute; left: -6%; bottom: -22%; width: 42%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(136,133,195,0.22) 0%, rgba(23,23,26,0) 66%); pointer-events: none;"></div>
     <div data-reveal style="position: relative; display: flex; flex-direction: column; gap: 24px; max-width: 820px;">
       <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #A9A6D4;">Contact</div>
       <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.6vw, 46px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.12; text-wrap: pretty;">Have a complex product that needs both design judgment and technical execution? Let's talk.</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-        <a href="mailto:brian.bh.du@gmail.com" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #FAFAF8; color: #17171A; padding: 14px 22px; border-radius: 999px;">Email me</a>
-        <a href="./Resume.dc.html" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #43434A; color: #E6E6EA; padding: 14px 22px; border-radius: 999px;">Printable résumé</a>
+        <a href="mailto:brian.bh.du@gmail.com" data-copy-email="brian.bh.du@gmail.com" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #FAFAF8; color: #17171A; padding: 14px 22px; border-radius: 999px;">Email me</a>
+        <a href="./resume.html?print=1" data-print-resume data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #43434A; color: #E6E6EA; padding: 14px 22px; border-radius: 999px;">Download PDF</a>
       </div>
     </div>
     <div style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 11.5px; color: #6C6C76; border-top: 1px solid #2E2E34; padding-top: 26px;">
@@ -258,6 +271,7 @@ class Component extends DCLogic {
     window.addEventListener('resize', this.onResize);
 
     this.reveals = Array.from(root.querySelectorAll('[data-reveal]'));
+    this.bindPrintResume(root);
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     this.reveals.forEach(el => {
       el.style.opacity = '0';
@@ -281,6 +295,71 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this.onResize) window.removeEventListener('resize', this.onResize);
     if (this.io) this.io.disconnect();
+  }
+
+  bindPrintResume(root) {
+    const start = () => this.downloadResumePdf();
+    root.querySelectorAll('[data-print-resume]').forEach((el) => {
+      el.addEventListener('click', (event) => {
+        event.preventDefault();
+        start();
+      });
+    });
+    if (!new URLSearchParams(window.location.search).has('print')) return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete('print');
+    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+    const run = () => start();
+    if (document.readyState === 'complete') run();
+    else window.addEventListener('load', run, { once: true });
+  }
+
+  downloadResumePdf() {
+    if (this._pdfBusy) return;
+    const source = document.querySelector('[data-dc-root] > div');
+    const exportPdf = window.bdDownloadLetterPdf;
+    if (!source || typeof exportPdf !== 'function') {
+      window.print();
+      return;
+    }
+
+    this._pdfBusy = true;
+    const buttons = Array.from(document.querySelectorAll('[data-print-resume]'));
+    const labels = buttons.map((el) => el.textContent);
+    buttons.forEach((el) => {
+      el.textContent = 'Preparing PDF…';
+      el.setAttribute('aria-busy', 'true');
+      el.style.pointerEvents = 'none';
+    });
+
+    const restore = () => {
+      buttons.forEach((el, i) => {
+        el.textContent = labels[i];
+        el.removeAttribute('aria-busy');
+        el.style.pointerEvents = '';
+      });
+      this._pdfBusy = false;
+    };
+
+    const desktopWidth = 1000;
+    const resetCloneLayout = (clonedDoc) => {
+      const liveNodes = document.querySelectorAll('[data-mq]');
+      clonedDoc.querySelectorAll('[data-mq]').forEach((node, index) => {
+        if (node.hasAttribute('data-print-hide')) return;
+        const base = liveNodes[index] && liveNodes[index].__mqBase;
+        if (base != null) node.setAttribute('style', base);
+      });
+      const sheet = clonedDoc.querySelector('[data-dc-root] > div');
+      if (sheet) {
+        sheet.style.width = desktopWidth + 'px';
+        sheet.style.maxWidth = desktopWidth + 'px';
+        sheet.style.overflow = 'visible';
+      }
+    };
+
+    exportPdf(source, { filename: 'Brian-Du-Resume.pdf', windowWidth: desktopWidth, onClone: resetCloneLayout })
+      .catch(() => window.print())
+      .then(restore);
   }
 
   applyResponsive() {

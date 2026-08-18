@@ -25,11 +25,13 @@ const linkMap = {
   "./Amplify Case Study.dc.html": "./amplify.html",
   "./Seedwell Case Study.dc.html": "./seedwell.html",
   "./Portfolio Resume.dc.html": "./resume.html",
+  "./Resume.dc.html": "./resume.html?print=1",
   "./Brand Guide.dc.html": "./brand.html",
   "Portfolio Home.dc.html": "index.html",
   "Amplify Case Study.dc.html": "amplify.html",
   "Seedwell Case Study.dc.html": "seedwell.html",
   "Portfolio Resume.dc.html": "resume.html",
+  "Resume.dc.html": "resume.html?print=1",
   "Brand Guide.dc.html": "brand.html",
 };
 
