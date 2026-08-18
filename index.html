@@ -81,6 +81,8 @@
       </div>
     </div>
 
+    <button type="button" data-tilt-enable hidden style="display: none; position: absolute; left: 50%; bottom: 24%; transform: translateX(-50%); z-index: 5; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #242426; background: #FAFAF8; border: 1px solid #242426; border-radius: 999px; padding: 8px 15px; cursor: pointer; touch-action: manipulation;">Tap to tilt</button>
+
     <div data-mq="1100" data-mq-style="flex-direction: column; align-items: flex-start; gap: 18px" style="position: relative; z-index: 4; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px;">
       <div data-reveal style="display: flex; flex-direction: column; gap: 12px; max-width: 300px;">
         <div style="display: flex; flex-direction: column; gap: 2px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;">
@@ -465,7 +467,8 @@ class Component extends DCLogic {
     this.bindTilt();
 
     this.tick = () => {
-      this.pointer += (this.pointerTarget - this.pointer) * 0.07;
+      const ease = this.tiltLive ? 0.14 : 0.07;
+      this.pointer += (this.pointerTarget - this.pointer) * ease;
       this.applyFigure();
       this.raf = requestAnimationFrame(this.tick);
     };
@@ -482,8 +485,9 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this.onScroll);
     window.removeEventListener('pointermove', this.onMove);
     window.removeEventListener('pointerleave', this.onLeave);
-    if (this.askTilt) window.removeEventListener('pointerdown', this.askTilt);
+    this.unhookTiltAsk();
     if (this.onOrient) window.removeEventListener('deviceorientation', this.onOrient);
+    if (this.onMotion) window.removeEventListener('devicemotion', this.onMotion);
     if (this.resetTiltCenter) {
       window.removeEventListener('orientationchange', this.resetTiltCenter);
       screen.orientation?.removeEventListener('change', this.resetTiltCenter);
@@ -519,49 +523,141 @@ class Component extends DCLogic {
     this.line.setAttribute('stroke-dashoffset', String(1200 * (1 - Math.max(0, Math.min(1, progress)))));
   }
 
-  bindTilt() {
-    if (!window.DeviceOrientationEvent) return;
-    this.onOrient = e => {
-      const tilt = this.tiltX(e);
-      if (tilt == null || Number.isNaN(tilt)) return;
-      if (this.tiltCenter == null) {
-        this.tiltCenter = tilt;
-        return;
-      }
-      const delta = tilt - this.tiltCenter;
-      this.pointerTarget = Math.max(-1, Math.min(1, delta / 24));
-      if (!this.tiltLive && Math.abs(delta) > 2) this.tiltLive = true;
-    };
-    this.resetTiltCenter = () => { this.tiltCenter = null; };
-    this.listenTilt = () => {
-      window.addEventListener('deviceorientation', this.onOrient, { passive: true });
-      window.addEventListener('orientationchange', this.resetTiltCenter);
-      screen.orientation?.addEventListener('change', this.resetTiltCenter);
-    };
-    this.askTilt = () => {
-      if (typeof window.DeviceOrientationEvent.requestPermission !== 'function') {
-        this.listenTilt();
-        return;
-      }
-      window.DeviceOrientationEvent.requestPermission().then(state => {
-        if (state === 'granted') this.listenTilt();
-      }).catch(() => {});
-    };
-    if (typeof window.DeviceOrientationEvent.requestPermission === 'function') {
-      window.addEventListener('pointerdown', this.askTilt, { passive: true, once: true });
-    } else {
-      this.listenTilt();
-    }
+  screenAngle() {
+    return screen.orientation?.angle ?? window.orientation ?? 0;
   }
 
   tiltX(e) {
     const gamma = e.gamma;
     const beta = e.beta;
-    const angle = screen.orientation?.angle ?? window.orientation ?? 0;
+    const angle = this.screenAngle();
     if (angle === 90) return beta;
     if (angle === -90 || angle === 270) return beta == null ? null : -beta;
     if (angle === 180) return gamma == null ? null : -gamma;
     return gamma;
+  }
+
+  motionX(e) {
+    const g = e.accelerationIncludingGravity;
+    if (!g || g.x == null) return null;
+    const angle = this.screenAngle();
+    if (angle === 90) return g.y;
+    if (angle === -90 || angle === 270) return g.y == null ? null : -g.y;
+    if (angle === 180) return -g.x;
+    return g.x;
+  }
+
+  applyTiltValue(value, range) {
+    if (value == null || Number.isNaN(value)) return;
+    if (this.tiltCenter == null) {
+      this.tiltCenter = value;
+      this.hideTiltEnable();
+      return;
+    }
+    const delta = value - this.tiltCenter;
+    this.pointerTarget = Math.max(-1, Math.min(1, delta / range));
+    if (!this.tiltLive && Math.abs(delta) > 1.5) this.tiltLive = true;
+  }
+
+  hideTiltEnable() {
+    if (!this.tiltEnable) return;
+    this.tiltEnable.hidden = true;
+    this.tiltEnable.style.display = 'none';
+  }
+
+  showTiltEnable() {
+    if (!this.tiltEnable) return;
+    this.tiltEnable.hidden = false;
+    this.tiltEnable.style.display = 'block';
+  }
+
+  needsTiltPermission() {
+    return typeof window.DeviceMotionEvent?.requestPermission === 'function'
+      || typeof window.DeviceOrientationEvent?.requestPermission === 'function';
+  }
+
+  unhookTiltAsk() {
+    if (!this.askTilt) return;
+    this.hero?.removeEventListener('click', this.askTilt);
+    this.tiltEnable?.removeEventListener('click', this.askTilt);
+  }
+
+  listenTilt() {
+    if (this.tiltListening) return;
+    this.tiltListening = true;
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', this.onOrient, { passive: true });
+    }
+    if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', this.onMotion, { passive: true });
+    }
+    window.addEventListener('orientationchange', this.resetTiltCenter);
+    screen.orientation?.addEventListener('change', this.resetTiltCenter);
+  }
+
+  hookTiltAsk() {
+    this.hero?.addEventListener('click', this.askTilt);
+    this.tiltEnable?.addEventListener('click', this.askTilt);
+  }
+
+  bindTilt() {
+    if (!window.DeviceOrientationEvent && !window.DeviceMotionEvent) return;
+    this.hero = this.root.querySelector('[data-screen-label="Hero"]');
+    this.tiltEnable = this.root.querySelector('[data-tilt-enable]');
+    this.tiltListening = false;
+    this.tiltAsking = false;
+    this.tiltFrom = null;
+    this.canTiltInput = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
+    this.resetTiltCenter = () => { this.tiltCenter = null; };
+    this.onOrient = e => {
+      const tilt = this.tiltX(e);
+      if (tilt == null) return;
+      this.tiltFrom = 'orient';
+      this.applyTiltValue(tilt, 20);
+    };
+    this.onMotion = e => {
+      if (this.tiltFrom === 'orient') return;
+      const tilt = this.motionX(e);
+      if (tilt == null) return;
+      this.applyTiltValue(tilt, 5.5);
+    };
+    this.askTilt = e => {
+      if (this.tiltListening && !this.needsTiltPermission()) return;
+      if (this.tiltAsking) return;
+      if (e?.target?.closest?.('a, input, textarea, select')) return;
+      if (e?.target?.closest?.('button') && !e.target.closest('[data-tilt-enable]')) return;
+      const req = Ctor => typeof Ctor?.requestPermission === 'function'
+        ? Ctor.requestPermission()
+        : Promise.resolve(null);
+      this.tiltAsking = true;
+      req(window.DeviceMotionEvent).then(motion => {
+        return req(window.DeviceOrientationEvent).then(orient => [motion, orient]);
+      }).then(states => {
+        this.tiltAsking = false;
+        const asked = states.filter(state => state === 'granted' || state === 'denied');
+        if (!asked.length || asked.some(state => state === 'granted')) {
+          this.listenTilt();
+          this.hideTiltEnable();
+          this.unhookTiltAsk();
+        }
+      }).catch(() => { this.tiltAsking = false; });
+    };
+    if (!this.needsTiltPermission()) {
+      this.listenTilt();
+      if (this.canTiltInput) {
+        window.setTimeout(() => {
+          if (this.tiltCenter == null) {
+            this.showTiltEnable();
+            this.hookTiltAsk();
+          }
+        }, 800);
+      }
+      return;
+    }
+    if (this.canTiltInput) {
+      this.showTiltEnable();
+      this.hookTiltAsk();
+    }
   }
 
   applyFigure() {
