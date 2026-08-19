@@ -127,22 +127,30 @@
       logo.__hoverReady = true;
       const mark = logo.querySelector("[data-logo-mark]");
       const accent = logo.querySelector("[data-logo-accent]");
-      const word = logo.querySelector("[data-logo-word]");
-      if (mark) {
-        mark.style.transformOrigin = "center";
-        mark.style.transition = "transform 320ms " + ease;
+      let bub = null;
+      if (mark && mark.parentNode) {
+        const holder = document.createElement("span");
+        holder.style.cssText =
+          "position:relative;display:inline-flex;align-items:center;justify-content:center;";
+        mark.parentNode.insertBefore(holder, mark);
+        bub = document.createElement("span");
+        bub.setAttribute("aria-hidden", "true");
+        bub.style.cssText =
+          "position:absolute;left:50%;top:50%;width:25px;height:25px;margin:-12.5px 0 0 -12.5px;border-radius:999px;background:#DAD7EE;pointer-events:none;transform:scale(0);transition:transform 520ms " +
+          spring +
+          ";";
+        holder.appendChild(bub);
+        holder.appendChild(mark);
+        mark.style.position = "relative";
       }
-      if (accent) accent.style.transition = "fill 320ms " + ease;
-      if (word) word.style.transition = "color 280ms " + ease;
+      if (accent) accent.style.transition = "fill 300ms " + ease;
       logo.addEventListener("pointerenter", () => {
         if (accent) accent.setAttribute("fill", "#6F6CAE");
-        if (word) word.style.color = "#6F6CAE";
-        if (!still && mark) mark.style.transform = "scale(1.05)";
+        if (!still && bub) bub.style.transform = "scale(1.32)";
       });
       logo.addEventListener("pointerleave", () => {
         if (accent) accent.setAttribute("fill", "#8885C3");
-        if (word) word.style.color = "#242426";
-        if (!still && mark) mark.style.transform = "none";
+        if (!still && bub) bub.style.transform = "scale(0)";
       });
     });
   }
