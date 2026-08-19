@@ -66,7 +66,7 @@
       </div>
       <p data-mq="620" data-mq-style="font-size: 14.5px" style="margin: 0; max-width: 680px; font-size: 16px; line-height: 1.65; color: #4C4C52; text-wrap: pretty;">Ten years across product strategy, UX, design systems and front-end engineering. Most recently carrying a clinical platform from brand and blank Figma file through React implementation and full-stack ownership.</p>
       <div data-print-hide style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <a href="./resume.html?print=1" data-print-resume style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #242426; color: #FAFAF8; padding: 14px 22px; border-radius: 999px;">Download PDF</a>
+        <a href="./Brian-Du-Resume.pdf" download="Brian-Du-Resume.pdf" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #242426; color: #FAFAF8; padding: 14px 22px; border-radius: 999px;">Download PDF</a>
         <a href="mailto:brian.bh.du@gmail.com" data-copy-email="brian.bh.du@gmail.com" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #242426; color: #242426; padding: 14px 22px; border-radius: 999px;">Email me</a>
       </div>
       <div data-mq="620" data-mq-style="grid-template-columns: 1fr 1fr; gap: 18px 20px" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px 34px; max-width: 900px; border-top: 1px solid rgba(36,36,38,0.14); padding-top: 24px;">
@@ -246,7 +246,7 @@
       <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3.6vw, 46px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.12; text-wrap: pretty;">Have a complex product that needs both design judgment and technical execution? Let's talk.</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 12px;">
         <a href="mailto:brian.bh.du@gmail.com" data-copy-email="brian.bh.du@gmail.com" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: #FAFAF8; color: #17171A; padding: 14px 22px; border-radius: 999px;">Email me</a>
-        <a href="./resume.html?print=1" data-print-resume data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #43434A; color: #E6E6EA; padding: 14px 22px; border-radius: 999px;">Download PDF</a>
+        <a href="./Brian-Du-Resume.pdf" download="Brian-Du-Resume.pdf" data-mq="480" data-mq-style="width: 100%; text-align: center" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #43434A; color: #E6E6EA; padding: 14px 22px; border-radius: 999px;">Download PDF</a>
       </div>
     </div>
     <div style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 11.5px; color: #6C6C76; border-top: 1px solid #2E2E34; padding-top: 26px;">
@@ -271,7 +271,6 @@ class Component extends DCLogic {
     window.addEventListener('resize', this.onResize);
 
     this.reveals = Array.from(root.querySelectorAll('[data-reveal]'));
-    this.bindPrintResume(root);
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     this.reveals.forEach(el => {
       el.style.opacity = '0';
@@ -295,71 +294,6 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this.onResize) window.removeEventListener('resize', this.onResize);
     if (this.io) this.io.disconnect();
-  }
-
-  bindPrintResume(root) {
-    const start = () => this.downloadResumePdf();
-    root.querySelectorAll('[data-print-resume]').forEach((el) => {
-      el.addEventListener('click', (event) => {
-        event.preventDefault();
-        start();
-      });
-    });
-    if (!new URLSearchParams(window.location.search).has('print')) return;
-    const url = new URL(window.location.href);
-    url.searchParams.delete('print');
-    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
-    const run = () => start();
-    if (document.readyState === 'complete') run();
-    else window.addEventListener('load', run, { once: true });
-  }
-
-  downloadResumePdf() {
-    if (this._pdfBusy) return;
-    const source = document.querySelector('[data-dc-root] > div');
-    const exportPdf = window.bdDownloadLetterPdf;
-    if (!source || typeof exportPdf !== 'function') {
-      window.print();
-      return;
-    }
-
-    this._pdfBusy = true;
-    const buttons = Array.from(document.querySelectorAll('[data-print-resume]'));
-    const labels = buttons.map((el) => el.textContent);
-    buttons.forEach((el) => {
-      el.textContent = 'Preparing PDF…';
-      el.setAttribute('aria-busy', 'true');
-      el.style.pointerEvents = 'none';
-    });
-
-    const restore = () => {
-      buttons.forEach((el, i) => {
-        el.textContent = labels[i];
-        el.removeAttribute('aria-busy');
-        el.style.pointerEvents = '';
-      });
-      this._pdfBusy = false;
-    };
-
-    const desktopWidth = 1000;
-    const resetCloneLayout = (clonedDoc) => {
-      const liveNodes = document.querySelectorAll('[data-mq]');
-      clonedDoc.querySelectorAll('[data-mq]').forEach((node, index) => {
-        if (node.hasAttribute('data-print-hide')) return;
-        const base = liveNodes[index] && liveNodes[index].__mqBase;
-        if (base != null) node.setAttribute('style', base);
-      });
-      const sheet = clonedDoc.querySelector('[data-dc-root] > div');
-      if (sheet) {
-        sheet.style.width = desktopWidth + 'px';
-        sheet.style.maxWidth = desktopWidth + 'px';
-        sheet.style.overflow = 'visible';
-      }
-    };
-
-    exportPdf(source, { filename: 'Brian-Du-Resume.pdf', windowWidth: desktopWidth, onClone: resetCloneLayout })
-      .catch(() => window.print())
-      .then(restore);
   }
 
   applyResponsive() {
@@ -395,6 +329,10 @@ window.__dcBoot = function __dcBoot() {
     });
   }
 };
+
+if (new URLSearchParams(window.location.search).has('print')) {
+  window.location.replace('./Brian-Du-Resume.pdf');
+}
 document.addEventListener('DOMContentLoaded', window.__dcBoot);
 </script>
 </div>
