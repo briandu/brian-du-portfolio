@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <button type="button" data-tilt-enable hidden style="display: none; position: absolute; left: 50%; bottom: 24%; transform: translateX(-50%); z-index: 5; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #242426; background: #FAFAF8; border: 1px solid #242426; border-radius: 999px; padding: 8px 15px; cursor: pointer; touch-action: manipulation;">Tap to tilt</button>
+    <button type="button" data-tilt-enable hidden style="display: none; position: absolute; left: 50%; top: 12%; transform: translateX(-50%); z-index: 5; max-width: calc(100% - 30px); white-space: nowrap; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #242426; background: #FAFAF8; border: 1px solid #242426; border-radius: 999px; padding: 8px 15px; cursor: pointer; touch-action: manipulation;">Tap here and tilt your phone</button>
 
     <div data-mq="1100" data-mq-style="flex-direction: column; align-items: flex-start; gap: 18px" style="position: relative; z-index: 4; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px;">
       <div data-reveal style="display: flex; flex-direction: column; gap: 12px; max-width: 300px;">
@@ -486,6 +486,7 @@ class Component extends DCLogic {
     window.removeEventListener('pointermove', this.onMove);
     window.removeEventListener('pointerleave', this.onLeave);
     this.unhookTiltAsk();
+    this.unhookTiltDismiss();
     if (this.onOrient) window.removeEventListener('deviceorientation', this.onOrient);
     if (this.onMotion) window.removeEventListener('devicemotion', this.onMotion);
     if (this.resetTiltCenter) {
@@ -551,12 +552,17 @@ class Component extends DCLogic {
     if (value == null || Number.isNaN(value)) return;
     if (this.tiltCenter == null) {
       this.tiltCenter = value;
-      this.hideTiltEnable();
+      if (this.canTiltInput && !this.tiltLive && !this.readTiltAccepted()) this.showTiltEnable();
       return;
     }
     const delta = value - this.tiltCenter;
     this.pointerTarget = Math.max(-1, Math.min(1, delta / range));
     if (!this.tiltLive && Math.abs(delta) > 1.5) this.tiltLive = true;
+    // Only a deliberate tilt retires the prompt; sensor noise must not.
+    if (Math.abs(delta) > range / 2) {
+      this.writeTiltAccepted();
+      this.hideTiltEnable();
+    }
   }
 
   hideTiltEnable() {
@@ -576,10 +582,37 @@ class Component extends DCLogic {
       || typeof window.DeviceOrientationEvent?.requestPermission === 'function';
   }
 
+  readTiltAccepted() {
+    try { return localStorage.getItem('hero-tilt-accepted') === '1'; }
+    catch { return false; }
+  }
+
+  writeTiltAccepted() {
+    try { localStorage.setItem('hero-tilt-accepted', '1'); }
+    catch { /* private mode */ }
+  }
+
+  requestTiltPermission() {
+    const req = Ctor => typeof Ctor?.requestPermission === 'function'
+      ? Ctor.requestPermission()
+      : Promise.resolve(null);
+    return req(window.DeviceMotionEvent).then(motion => {
+      return req(window.DeviceOrientationEvent).then(orient => [motion, orient]);
+    }).then(states => {
+      const asked = states.filter(state => state === 'granted' || state === 'denied');
+      return !asked.length || asked.some(state => state === 'granted');
+    });
+  }
+
   unhookTiltAsk() {
     if (!this.askTilt) return;
     this.hero?.removeEventListener('click', this.askTilt);
     this.tiltEnable?.removeEventListener('click', this.askTilt);
+  }
+
+  unhookTiltDismiss() {
+    if (!this.dismissTilt) return;
+    this.tiltEnable?.removeEventListener('click', this.dismissTilt);
   }
 
   listenTilt() {
@@ -609,6 +642,11 @@ class Component extends DCLogic {
     this.tiltFrom = null;
     this.canTiltInput = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
     this.resetTiltCenter = () => { this.tiltCenter = null; };
+    this.dismissTilt = () => {
+      this.writeTiltAccepted();
+      this.hideTiltEnable();
+    };
+    this.tiltEnable?.addEventListener('click', this.dismissTilt);
     this.onOrient = e => {
       const tilt = this.tiltX(e);
       if (tilt == null) return;
@@ -622,36 +660,42 @@ class Component extends DCLogic {
       this.applyTiltValue(tilt, 5.5);
     };
     this.askTilt = e => {
-      if (this.tiltListening && !this.needsTiltPermission()) return;
-      if (this.tiltAsking) return;
+      if (this.tiltListening || this.tiltAsking) return;
       if (e?.target?.closest?.('a, input, textarea, select')) return;
       if (e?.target?.closest?.('button') && !e.target.closest('[data-tilt-enable]')) return;
-      const req = Ctor => typeof Ctor?.requestPermission === 'function'
-        ? Ctor.requestPermission()
-        : Promise.resolve(null);
       this.tiltAsking = true;
-      req(window.DeviceMotionEvent).then(motion => {
-        return req(window.DeviceOrientationEvent).then(orient => [motion, orient]);
-      }).then(states => {
+      this.requestTiltPermission().then(ok => {
         this.tiltAsking = false;
-        const asked = states.filter(state => state === 'granted' || state === 'denied');
-        if (!asked.length || asked.some(state => state === 'granted')) {
+        if (ok) {
+          this.writeTiltAccepted();
           this.listenTilt();
           this.hideTiltEnable();
           this.unhookTiltAsk();
         }
       }).catch(() => { this.tiltAsking = false; });
     };
+    // Without a permission gate, the first sensor reading is what proves tilt
+    // exists, so applyTiltValue raises the prompt instead of showing it blindly.
     if (!this.needsTiltPermission()) {
       this.listenTilt();
-      if (this.canTiltInput) {
-        window.setTimeout(() => {
-          if (this.tiltCenter == null) {
-            this.showTiltEnable();
-            this.hookTiltAsk();
-          }
-        }, 800);
-      }
+      return;
+    }
+    if (this.readTiltAccepted()) {
+      this.requestTiltPermission().then(ok => {
+        if (ok) {
+          this.listenTilt();
+          return;
+        }
+        if (this.canTiltInput) {
+          this.showTiltEnable();
+          this.hookTiltAsk();
+        }
+      }).catch(() => {
+        if (this.canTiltInput) {
+          this.showTiltEnable();
+          this.hookTiltAsk();
+        }
+      });
       return;
     }
     if (this.canTiltInput) {
