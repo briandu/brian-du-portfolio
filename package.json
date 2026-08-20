@@ -7,5 +7,8 @@
     "import:handoff": "node scripts/import-handoff.mjs",
     "start": "npx --yes serve . -l 3000",
     "dev": "npx --yes serve . -l 3000"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
