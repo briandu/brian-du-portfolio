@@ -5,6 +5,7 @@
   "description": "Brian Du personal portfolio — product design & front-end",
   "scripts": {
     "import:handoff": "node scripts/import-handoff.mjs",
+    "resume:pdf": "node scripts/generate-resume-pdf.mjs",
     "start": "npx --yes serve . -l 3000",
     "dev": "npx --yes serve . -l 3000"
   },
